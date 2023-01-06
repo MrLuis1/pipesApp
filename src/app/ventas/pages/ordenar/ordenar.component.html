@@ -35,6 +35,23 @@
     </div>
 </p-toolbar>
 
-<div class="grid">
-    
+<div class="grid mt-2">
+    <div class="col">
+        <p-table [value]="heroes | ordenar">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Vuela</th>
+                        <th>Color</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-hero>
+                    <tr>
+                        <td>{{hero.nombre}}</td>
+                        <td>{{hero.vuela | vuela | titlecase}}</td>
+                        <td>{{hero.color}}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+    </div>
 </div>
